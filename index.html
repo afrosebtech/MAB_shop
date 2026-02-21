@@ -1,363 +1,967 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M A B HARDWARE CEMENT - Reliable Construction Material Supplier</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Set default font to Inter -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Light gray-blue background */
-            scroll-behavior: smooth;
-        }
-        /* Adjusted CTA button style for the new Amber accent color */
-        .cta-button {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta-button:hover, .cta-button:active {
-            transform: translateY(-2px);
-            /* New Amber shadow on hover */
-            box-shadow: 0 6px 10px rgba(245, 158, 11, 0.4); 
-        }
-        .section-header {
-            /* Changed border color to strong Indigo */
-            border-bottom: 4px solid #4f46e5; /* Indigo-600 */
-            display: inline-block;
-            padding-bottom: 8px;
-        }
-        /* Style for the embedded map container */
-        .map-container {
-            width: 100%;
-            height: 400px; /* Good height for mobile and desktop */
-            border-radius: 0.75rem; /* Rounded corners */
-            overflow: hidden; /* Ensures the iframe corners are respected */
-        }
-        /* Floating WhatsApp button */
-        .whatsapp-float {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background-color: #25D366; /* WhatsApp green */
-            color: #fff;
-            width: 56px;
-            height: 56px;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-            z-index: 1000;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-        }
-        .whatsapp-float:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.2); }
-        .whatsapp-icon { width: 36px; height: 36px; display: block; }
-        @media (max-width: 480px) { .whatsapp-float { right: 14px; bottom: 14px; width: 50px; height:50px; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAB Hardware Cement | Premium Construction Materials, Krishnagiri</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8860B;
+    --gold-light: #D4A017;
+    --gold-pale: #FDF3DC;
+    --gold-mid: #F5E0A0;
+    --cream: #FDFAF4;
+    --cream2: #F7F2E8;
+    --warm-white: #FFFEF9;
+    --text-dark: #1C1A14;
+    --text-mid: #4A4535;
+    --text-muted: #8A7F68;
+    --border: #E8DEC8;
+    --shadow: rgba(100,80,30,0.10);
+    --green: #25D366;
+    --green-dark: #128C7E;
+    --green-light: #EDF7F2;
+    --wa-green: #25D366;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(253,250,244,0.93);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+
+  .logo-badge {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 1rem; font-weight: 900; color: #fff;
+    box-shadow: 0 4px 14px rgba(184,134,11,0.3);
+  }
+
+  .logo-words { line-height: 1.1; }
+  .logo-words strong { display: block; font-size: 0.98rem; font-weight: 800; color: var(--text-dark); }
+  .logo-words span { font-size: 0.61rem; color: var(--text-muted); font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }
+
+  .nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text-mid); font-size: 0.82rem; font-weight: 600; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: #fff !important;
+    padding: 0.55rem 1.3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(184,134,11,0.25);
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-2px); }
+
+  .nav-wa {
+    background: var(--wa-green) !important;
+    color: #fff !important;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    display: flex; align-items: center; gap: 6px;
+    box-shadow: 0 4px 14px rgba(37,211,102,0.3);
+  }
+  .nav-wa:hover { background: #1ebe5c !important; transform: translateY(-2px); }
+
+  .ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .ham span { width: 22px; height: 2px; background: var(--text-dark); border-radius: 2px; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 7rem 5% 4rem;
+    background: var(--warm-white);
+    position: relative; overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; top: -120px; right: -120px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,160,23,0.13) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -100px; left: -80px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(37,211,102,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+    width: 100%; position: relative; z-index: 1;
+  }
+
+  .hero-left { animation: fadeUp 0.9s ease both; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold-pale); border: 1px solid var(--gold-mid);
+    padding: 0.4rem 1rem; border-radius: 50px;
+    font-size: 0.7rem; font-weight: 700; color: var(--gold);
+    letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+
+  .hero-pill::before {
+    content: ''; width: 7px; height: 7px;
+    background: var(--gold); border-radius: 50%;
+    animation: blink 2s infinite;
+  }
+
+  @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    line-height: 1.08; font-weight: 900;
+    color: var(--text-dark); margin-bottom: 1.4rem; letter-spacing: -1px;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+
+  .hero-sub {
+    font-size: 1rem; color: var(--text-muted);
+    line-height: 1.75; max-width: 460px; margin-bottom: 2.2rem;
+  }
+
+  .hero-sub strong { color: var(--text-mid); font-weight: 700; }
+
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: #fff;
+    padding: 0.9rem 1.8rem; border-radius: 10px;
+    text-decoration: none; font-weight: 700; font-size: 0.85rem;
+    border: none; cursor: pointer;
+    box-shadow: 0 6px 20px rgba(184,134,11,0.28);
+    transition: all 0.25s;
+  }
+
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(184,134,11,0.35); }
+
+  .btn-wa {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--wa-green); color: #fff;
+    padding: 0.9rem 1.8rem; border-radius: 10px;
+    text-decoration: none; font-weight: 700; font-size: 0.85rem;
+    border: none; cursor: pointer;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+    transition: all 0.25s;
+  }
+
+  .btn-wa:hover { background: #1ebe5c; transform: translateY(-3px); box-shadow: 0 12px 28px rgba(37,211,102,0.4); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--text-mid);
+    padding: 0.9rem 1.8rem; border-radius: 10px;
+    text-decoration: none; font-weight: 700; font-size: 0.85rem;
+    border: 1.5px solid var(--border); cursor: pointer; transition: all 0.25s;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
+
+  .hero-trust { display: flex; align-items: center; gap: 1.2rem; }
+  .trust-avatars { display: flex; }
+  .trust-avatars span {
+    width: 34px; height: 34px; border-radius: 50%; border: 2px solid #fff;
+    background: linear-gradient(135deg, var(--gold-pale), var(--gold-mid));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; margin-left: -8px;
+  }
+  .trust-avatars span:first-child { margin-left: 0; }
+  .trust-text { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; }
+  .trust-text strong { color: var(--text-dark); display: block; }
+
+  .hero-right { display: flex; flex-direction: column; gap: 1.2rem; animation: fadeUp 1s ease 0.2s both; }
+
+  .hero-card {
+    background: #fff; border-radius: 18px; border: 1px solid var(--border);
+    padding: 1.8rem 2rem; box-shadow: 0 4px 24px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .hero-card:hover { transform: translateY(-4px); box-shadow: 0 10px 35px rgba(100,80,30,0.14); }
+
+  .hero-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+  .card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+  .card-icon.gold-bg { background: var(--gold-pale); }
+  .card-icon.green-bg { background: #e8fef0; }
+  .card-badge { font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 50px; }
+  .badge-gold { background: var(--gold-pale); color: var(--gold); }
+  .badge-green { background: #e8fef0; color: #128C7E; }
+  .hero-card h4 { font-size: 1rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.4rem; }
+  .hero-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .stat-box {
+    background: #fff; border: 1px solid var(--border); border-radius: 14px;
+    padding: 1.2rem; text-align: center; box-shadow: 0 2px 12px var(--shadow); transition: all 0.3s;
+  }
+  .stat-box:hover { border-color: var(--gold-mid); background: var(--gold-pale); }
+  .stat-num { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; color: var(--gold); line-height: 1; display: block; margin-bottom: 4px; }
+  .stat-lbl { font-size: 0.65rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 5%; }
+
+  .sec-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .sec-label::before { content: ''; width: 20px; height: 2px; background: var(--gold); border-radius: 2px; }
+
+  .sec-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900;
+    color: var(--text-dark); line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.5px;
+  }
+
+  .sec-sub { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; max-width: 520px; }
+
+  /* ── PRODUCTS ── */
+  .products { background: var(--cream2); }
+  .prod-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 2rem; }
+  .prod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; }
+
+  .prod-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 20px;
+    padding: 2.2rem; transition: all 0.35s; position: relative; overflow: hidden;
+  }
+  .prod-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+  }
+  .prod-card:hover { border-color: var(--gold-mid); box-shadow: 0 12px 40px rgba(100,80,30,0.12); transform: translateY(-6px); }
+  .prod-card:hover::after { transform: scaleX(1); }
+
+  .prod-icon {
+    width: 60px; height: 60px; background: var(--gold-pale);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem; margin-bottom: 1.5rem; transition: transform 0.3s;
+  }
+  .prod-card:hover .prod-icon { transform: scale(1.1) rotate(-4deg); }
+  .prod-card h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 900; color: var(--text-dark); margin-bottom: 0.6rem; }
+  .prod-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.4rem; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 0.68rem; font-weight: 600; padding: 4px 12px; border-radius: 50px;
+    background: var(--cream2); color: var(--text-mid); border: 1px solid var(--border); transition: all 0.2s;
+  }
+  .prod-card:hover .tag { background: var(--gold-pale); border-color: var(--gold-mid); color: var(--gold); }
+
+  /* ── BRANDS ── */
+  .brands { background: var(--warm-white); text-align: center; }
+  .brands-head { margin-bottom: 3.5rem; }
+  .brands-head .sec-label { justify-content: center; }
+  .brands-head .sec-label::before { display: none; }
+
+  .brands-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+
+  .brand-card {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 18px;
+    padding: 2rem 1.2rem; transition: all 0.3s; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+  }
+  .brand-card:hover { border-color: var(--gold); background: var(--gold-pale); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(184,134,11,0.14); }
+
+  /* Real brand logos via img tag */
+  .brand-logo-img { display: none; }
+  .brand-icon {
+    width: 70px; height: 70px;
+    background: var(--gold-pale);
+    border-radius: 14px;
+    border: 1px solid var(--gold-mid);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    transition: transform 0.3s;
+  }
+  .brand-card:hover .brand-icon { transform: scale(1.08); }
+
+  .brand-name { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 900; color: var(--text-dark); }
+  .brand-type { font-size: 0.68rem; color: var(--text-muted); font-weight: 500; }
+  .brand-auth { font-size: 0.62rem; font-weight: 700; background: #e8fef0; color: #128C7E; padding: 3px 10px; border-radius: 50px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ── WHY ── */
+  .why { background: var(--cream2); }
+  .why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+  .why-features { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+  .why-item {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1.4rem; background: #fff; border-radius: 14px;
+    border: 1px solid var(--border); transition: all 0.3s;
+  }
+  .why-item:hover { border-color: var(--gold-mid); box-shadow: 0 6px 24px var(--shadow); transform: translateX(4px); }
+  .why-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: var(--gold-mid); line-height: 1; min-width: 28px; }
+  .why-item h4 { font-size: 0.9rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.35rem; }
+  .why-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
+
+  .why-right { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .why-big-card {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    border-radius: 20px; padding: 2.5rem; color: #fff; position: relative; overflow: hidden;
+  }
+  .why-big-card::before { content: '🏗️'; position: absolute; right: 1.5rem; top: 1.5rem; font-size: 4rem; opacity: 0.15; }
+  .why-big-card h3 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; margin-bottom: 0.8rem; line-height: 1.2; }
+  .why-big-card p { font-size: 0.88rem; opacity: 0.88; line-height: 1.7; margin-bottom: 1.5rem; }
+  .why-big-card a {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fff; color: var(--gold);
+    padding: 0.7rem 1.4rem; border-radius: 8px;
+    font-weight: 700; font-size: 0.82rem; text-decoration: none; transition: all 0.2s;
+  }
+  .why-big-card a:hover { background: var(--gold-pale); transform: translateY(-2px); }
+
+  .info-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; transition: all 0.3s; }
+  .info-card:hover { border-color: var(--gold-mid); box-shadow: 0 8px 28px var(--shadow); }
+  .info-card-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+  .info-card h4 { font-weight: 800; font-size: 0.95rem; color: var(--text-dark); margin-bottom: 0.4rem; }
+  .info-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* ── LOCATION ── */
+  .location { background: var(--warm-white); }
+  .location-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+  .contact-items { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+  .c-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.3rem; background: #fff; border: 1px solid var(--border);
+    border-radius: 14px; transition: all 0.3s;
+  }
+  .c-item:hover { border-color: var(--gold-mid); box-shadow: 0 4px 18px var(--shadow); }
+  .c-icon { width: 44px; height: 44px; background: var(--gold-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .c-label { font-size: 0.65rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.3rem; }
+  .c-val, .c-val a { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); text-decoration: none; line-height: 1.5; transition: color 0.2s; }
+  .c-val a:hover { color: var(--gold); }
+
+  .hours-card { background: var(--cream2); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; transition: background 0.2s; }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row:hover { background: var(--gold-pale); }
+  .hours-day { font-weight: 600; color: var(--text-mid); }
+  .hours-time { font-weight: 700; color: var(--gold); }
+  .hours-closed { font-weight: 500; color: var(--text-muted); font-size: 0.8rem; }
+
+  /* Google Maps embed */
+  .map-card { background: #fff; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px var(--shadow); }
+  .map-card iframe { width: 100%; height: 320px; border: none; display: block; }
+  .map-footer { padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem; }
+  .map-footer p { font-size: 0.85rem; color: var(--text-mid); font-weight: 500; line-height: 1.5; }
+  .map-footer p strong { color: var(--text-dark); display: block; font-size: 0.9rem; }
+
+  /* ── CONTACT / FORM ── */
+  .contact { background: var(--cream2); }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+
+  .form-card { background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 3rem; box-shadow: 0 4px 30px var(--shadow); }
+  .form-title { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; color: var(--text-dark); margin-bottom: 0.4rem; }
+  .form-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.6; }
+
+  .send-note {
+    display: flex; align-items: center; gap: 8px;
+    background: #e8fef0; border: 1px solid #b2f0cc;
+    border-radius: 8px; padding: 0.6rem 1rem;
+    font-size: 0.78rem; color: #128C7E; font-weight: 600;
+    margin-bottom: 1.8rem;
+  }
+
+  .form-group { margin-bottom: 1.3rem; }
+  .form-group label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 0.5rem; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 0.85rem 1.1rem; font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem; color: var(--text-dark); background: var(--cream);
+    outline: none; transition: all 0.25s; resize: none; appearance: none;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: var(--gold); background: var(--warm-white);
+    box-shadow: 0 0 0 3px rgba(184,134,11,0.1);
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); font-size: 0.85rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-actions { display: flex; flex-direction: column; gap: 0.8rem; }
+
+  .btn-submit-wa {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--wa-green); color: #fff;
+    padding: 1rem; border-radius: 10px;
+    font-weight: 700; font-size: 0.9rem; border: none; cursor: pointer;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.3); transition: all 0.25s; width: 100%;
+  }
+  .btn-submit-wa:hover { background: #1ebe5c; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,0.4); }
+
+  .btn-submit-email {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--gold); color: #fff;
+    padding: 1rem; border-radius: 10px;
+    font-weight: 700; font-size: 0.9rem; border: none; cursor: pointer;
+    box-shadow: 0 6px 20px rgba(184,134,11,0.25); transition: all 0.25s; width: 100%;
+  }
+  .btn-submit-email:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  /* ── WHATSAPP FLOAT ── */
+  .wa-float {
+    position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 999;
+    background: var(--wa-green); color: #fff;
+    width: 62px; height: 62px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 1.6rem;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    animation: floatUp 3s ease-in-out infinite; transition: all 0.25s;
+  }
+  .wa-float:hover { transform: scale(1.12) !important; animation: none; box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+  .wa-float-tooltip {
+    position: absolute; right: 74px; top: 50%; transform: translateY(-50%);
+    background: #1C1A14; color: #fff; padding: 6px 12px; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600; white-space: nowrap;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none;
+  }
+  .wa-float:hover .wa-float-tooltip { opacity: 1; }
+
+  @keyframes floatUp { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+  /* ── FOOTER ── */
+  footer { background: var(--text-dark); color: #fff; padding: 2.5rem 5%; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+  .footer-copy strong { color: var(--gold-light); }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.78rem; font-weight: 600; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  /* ── REVEAL ── */
+  
+  
+  
+  
+  
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .ham { display: flex; }
+    .nav-links { display: none; }
+    .hero-inner, .why-layout, .location-layout, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-right { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 4rem 5%; }
+  }
+</style>
 </head>
-<body class="text-gray-800">
+<body>
 
-    <!-- Navigation Header - Changed to Deep Indigo -->
-    <header class="bg-indigo-800 text-white shadow-xl sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Logo/Business Name - Changed text color to Amber -->
-            <div class="text-2xl font-extrabold tracking-wide text-amber-400">
-                M A B HARDWARE CEMENT
-            </div>
-            <!-- Mobile-Friendly Navigation Links - Hover color changed to Amber -->
-            <nav class="hidden md:flex space-x-6 font-medium">
-                <a href="#products" class="hover:text-amber-400 transition duration-150">Products</a>
-                <a href="#brands" class="hover:text-amber-400 transition duration-150">Brands</a>
-                <a href="#location" class="hover:text-amber-400 transition duration-150">Location</a>
-                <a href="#hours" class="hover:text-amber-400 transition duration-150">Hours</a>
-                <a href="#contact" class="hover:text-amber-400 transition duration-150">Contact & Quote</a>
-            </nav>
-            <!-- Mobile CTA button - Changed to Amber -->
-            <a href="#contact" class="md:hidden bg-amber-500 text-indigo-900 px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-amber-400 transition duration-150">
-                Bulk Quote
-            </a>
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/918072274917?text=Hello%20MAB%20Hardware%20Cement!%20I%20would%20like%20to%20enquire%20about%20your%20materials." 
+   target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-float-tooltip">Chat on WhatsApp</span>
+</a>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#home" class="nav-logo">
+    <div class="logo-badge">MAB</div>
+    <div class="logo-words">
+      <strong>MAB Hardware Cement</strong>
+      <span>Authorized Dealer · Krishnagiri</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#brands">Brands</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="https://wa.me/918072274917" target="_blank" class="nav-wa">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="ham" id="hamBtn"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-pill">Trusted Supplier · Krishnagiri</div>
+      <h1>Your Foundation<br>for <em>Quality</em><br>Construction.</h1>
+      <p class="hero-sub">
+        <strong>Premium cement, TMT steel &amp; aggregates</strong> — supplied directly to your site.
+        Authorized dealer for Bharathi, Priya, UltraTech and more.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">📋 Request Bulk Quote</a>
+        <a href="https://wa.me/918072274917?text=Hello!%20I%20need%20a%20quote%20for%20construction%20materials." target="_blank" class="btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+        <a href="tel:8072274917" class="btn-outline">📞 Call Now</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <span>👷</span><span>🏗️</span><span>🧱</span>
         </div>
-    </header>
-
-    <main>
-        <!-- 1. Hero Section - Changed to Deep Indigo background -->
-        <section id="hero" class="bg-indigo-800 text-white pt-20 pb-28 sm:pt-28 sm:pb-40">
-            <div class="max-w-4xl mx-auto text-center px-6">
-                <h1 class="text-5xl sm:text-6xl font-black leading-tight mb-6">
-                    Your Foundation for Quality Construction.
-                </h1>
-                <p class="text-xl sm:text-2xl mb-10 opacity-80 max-w-2xl mx-auto">
-                    Trusted Supplier of **Premium Cement, Steel, and Building Materials** in Krishnagiri.
-                </p>
-                <!-- CTA Button - Changed to Amber -->
-                <a href="#contact" class="cta-button inline-block bg-amber-500 text-indigo-900 font-bold text-lg px-10 py-4 rounded-xl shadow-2xl hover:bg-amber-400">
-                    Get a Free Bulk Quote Now
-                </a>
-            </div>
-        </section>
-
-        <!-- 2. Products Section -->
-        <section id="products" class="py-16 sm:py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <!-- Section Header text color changed to Indigo, border is now Indigo via style block -->
-                <h2 class="text-3xl font-extrabold text-center text-indigo-800 mb-4 section-header">Our Material Range</h2>
-                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">We stock essential, high-quality materials to ensure your project is built to last, delivered right to your site.</p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Product Card 1: Cement - Card background changed, border changed to Indigo, icon color changed to Indigo -->
-                    <div class="bg-indigo-50 p-8 rounded-xl shadow-lg border-t-4 border-indigo-600">
-                        <div class="text-4xl mb-4 text-indigo-600">🏗️</div>
-                        <h3 class="text-2xl font-bold mb-3 text-indigo-800">Cement & Binders</h3>
-                        <p class="text-gray-600 mb-4">We are the authorized dealer for multiple leading cement brands, ensuring you get the exact specifications your project requires.</p>
-                        <ul class="list-disc list-inside text-gray-700 font-semibold space-y-1 pl-4">
-                            <li>**Bulk Cement Bags**</li>
-                            <li>High-Grade PPC & OPC</li>
-                            <li>Specialty Cement for RMC</li>
-                        </ul>
-                    </div>
-
-                    <!-- Product Card 2: Steel & Iron - Card background changed, border changed to Indigo, icon color changed to Indigo -->
-                    <div class="bg-indigo-50 p-8 rounded-xl shadow-lg border-t-4 border-indigo-600">
-                        <div class="text-4xl mb-4 text-indigo-600">🔩</div>
-                        <h3 class="text-2xl font-bold mb-3 text-indigo-800">Steel & Reinforcement</h3>
-                        <p class="text-gray-600 mb-4">TMT iron rods and steel bars in various grades and sizes for reliable structural integrity.</p>
-                        <ul class="list-disc list-inside text-gray-700 font-semibold space-y-1 pl-4">
-                            <li>**TMT Iron Rods** (Various grades)</li>
-                            <li>Structural Steel</li>
-                            <li>Binding Wire</li>
-                        </ul>
-                    </div>
-
-                    <!-- Product Card 3: Aggregates & Stone - Card background changed, border changed to Indigo, icon color changed to Indigo -->
-                    <div class="bg-indigo-50 p-8 rounded-xl shadow-lg border-t-4 border-indigo-600">
-                        <div class="text-4xl mb-4 text-indigo-600">🧱</div>
-                        <h3 class="text-2xl font-bold mb-3 text-indigo-800">Stone & Aggregates</h3>
-                        <p class="text-gray-600 mb-4">Sourced from reliable quarries, perfect for flooring, cladding, and base construction.</p>
-                        <ul class="list-disc list-inside text-gray-700 font-semibold space-y-1 pl-4">
-                            <li>**Kadapa Stones**</li>
-                            <li>Sand and Gravel</li>
-                            <li>Crushed Stone Aggregates</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 3. Brands Section (Focus on Cement) -->
-        <section id="brands" class="py-16 bg-gray-200">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                <!-- Section Header text color changed to Indigo, border is now Indigo via style block -->
-                <h2 class="text-3xl font-extrabold text-indigo-800 mb-10 section-header">Authorised Cement Brands</h2>
-                
-                <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
-                    
-                    <!-- Generic Image Placeholder for Visual Interest -->
-                    <div class="hidden sm:block p-4 rounded-xl">
-                        <!-- Placeholder color changed to deep gray/blue -->
-                        <img src="https://placehold.co/120x160/2c3e50/ffffff?text=CEMENT+BAG" alt="Image of a cement bag" class="rounded-lg shadow-xl">
-                    </div>
-                    
-                    <!-- Brand 1: Bharathi (Border and text color reverted to red for distinct brand identity, if applicable) -->
-                    <div class="p-4 sm:p-6 bg-white rounded-xl shadow-lg border-l-4 border-red-600 transform hover:scale-105 transition duration-300">
-                        <p class="text-2xl font-extrabold text-red-700">BHARATHI</p>
-                    </div>
-
-                    <!-- Brand 2: Priya (Border and text color retained for distinct brand identity) -->
-                    <div class="p-4 sm:p-6 bg-white rounded-xl shadow-lg border-l-4 border-green-600 transform hover:scale-105 transition duration-300">
-                        <p class="text-2xl font-extrabold text-green-700">PRIYA</p>
-                    </div>
-
-                    <!-- Brand 3: Ultra Tech (Border and text color retained for distinct brand identity) -->
-                    <div class="p-4 sm:p-6 bg-white rounded-xl shadow-lg border-l-4 border-blue-600 transform hover:scale-105 transition duration-300">
-                        <p class="text-2xl font-extrabold text-blue-700">ULTRA TECH</p>
-                    </div>
-                    
-                    <!-- Plus more brands - Text color changed to Indigo -->
-                    <div class="p-4 rounded-xl text-indigo-600 text-xl font-semibold">
-                        & More Quality Brands
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Location Map Section -->
-        <section id="location" class="py-16 sm:py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <h2 class="text-3xl font-extrabold text-center text-indigo-800 mb-12 section-header">Find Our Store Location</h2>
-                <div class="map-container shadow-2xl">
-                    <!-- Google Maps Embed: Placeholder for Krishnagiri location -->
-                    <iframe 
-                        src="https://maps.google.com/maps?q=Athimugam,%20Krishnagiri%20-%20635105&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                <div class="text-center mt-6 text-lg text-gray-700 font-medium">
-                    <p>Address: **#2/267, Berigai Road, Athimugam, Krishnagiri - 635105**</p>
-                    <p class="text-sm text-gray-500 mt-1">Visit us for in-person consultations and material inspection.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Store Hours Section -->
-        <section id="hours" class="py-16 bg-gray-50">
-            <div class="max-w-xl mx-auto px-6 lg:px-8">
-                <h2 class="text-3xl font-extrabold text-center text-indigo-800 mb-12 section-header">Store Timings</h2>
-                <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-amber-500">
-                    <div class="space-y-4">
-                        <!-- Monday - Saturday -->
-                        <div class="flex justify-between items-center border-b pb-2">
-                            <span class="text-lg font-semibold text-gray-700">Mon - Sat</span>
-                            <span class="text-xl font-extrabold text-indigo-600">7:00 AM – 7:00 PM</span>
-                        </div>
-                        
-                        <!-- Sunday -->
-                        <div class="flex justify-between items-center">
-                            <span class="text-lg font-semibold text-gray-700">Sunday</span>
-                            <span class="text-xl font-extrabold text-red-500">CLOSED</span>
-                        </div>
-                    </div>
-                    <p class="text-center text-sm text-gray-500 mt-6">
-                        Bulk material loading and delivery hours may vary. Please call to confirm.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- 6. Contact & Quote Section -->
-        <section id="contact" class="py-16 sm:py-24 bg-gray-100">
-            <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <!-- Section Header text color changed to Indigo, border is now Indigo via style block -->
-                <h2 class="text-3xl font-extrabold text-center text-indigo-800 mb-12 section-header">Contact & Bulk Order Inquiry</h2>
-                <div class="bg-white p-8 sm:p-10 rounded-xl shadow-2xl border-2 border-indigo-100">
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        <!-- Contact Info Column -->
-                        <div class="space-y-6">
-                            <!-- Header and text color changes -->
-                            <h3 class="text-2xl font-bold text-indigo-800">Reach Us Directly</h3>
-                            
-                            <!-- Phone - Icon changed to Amber, number changed to Indigo -->
-                            <div class="flex items-center space-x-4">
-                                <div class="text-amber-500 text-3xl">📞</div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">Call for Immediate Quotes</p>
-                                    <p class="text-xl font-extrabold text-indigo-600">8072274917, 9443058106</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Email - Icon changed to Amber, email changed to Indigo -->
-                            <div class="flex items-center space-x-4">
-                                <div class="text-amber-500 text-3xl">📧</div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">Email Inquiries</p>
-                                    <p class="text-md break-all text-indigo-600">mdsalauddin10279@gmail.com</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Proprietor Info -->
-                            <div class="flex items-start space-x-4">
-                                <div class="text-amber-500 text-3xl">👤</div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">Proprietor</p>
-                                    <p class="text-base text-gray-600 font-bold">MOHAMMED SALAUDDIN</p>
-                                </div>
-                            </div>
-
-                            <!-- Quick Hours Reminder -->
-                             <div class="flex items-start space-x-4">
-                                <div class="text-amber-500 text-3xl">🕒</div>
-                                <div>
-                                    <p class="font-semibold text-gray-700">Working Hours</p>
-                                    <p class="text-base text-indigo-600 font-bold">Mon - Sat: 7:00 AM to 7:00 PM</p>
-                                    <a href="#hours" class="text-sm text-indigo-500 hover:text-indigo-700 underline">See Full Timings</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Inquiry Form Column -->
-                        <div class="space-y-4">
-                            <h3 class="text-2xl font-bold text-indigo-800">Request a Bulk Quote</h3>
-                            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
-                                    <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 focus:border-indigo-500 focus:ring-indigo-500">
-                                </div>
-                                <div>
-                                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 focus:border-indigo-500 focus:ring-indigo-500">
-                                </div>
-                                <div>
-                                    <label for="message" class="block text-sm font-medium text-gray-700">Materials Needed & Quantity (e.g., 500 bags Ultra Tech cement, 50 iron rods)</label>
-                                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm p-3 focus:border-indigo-500 focus:ring-indigo-500"></textarea>
-                                </div>
-                                <!-- Submit button changed to Indigo/Amber -->
-                                <button type="submit" class="w-full cta-button bg-indigo-600 text-white font-semibold py-3 px-4 rounded-xl hover:bg-indigo-700 transition duration-150">
-                                    Send Quote Request
-                                </button>
-                                <div id="form-message" class="text-center mt-3 text-sm font-medium text-indigo-600 hidden"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer - Changed to Deep Gray/Blue -->
-    <footer class="bg-indigo-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="mb-2 text-sm">Proprietor: **MOHAMMED SALAUDDIN** | Phone: 8072274917, 9443058106</p>
-            <p class="text-xs">#2/267, Berigai Road, Athimugam, Krishnagiri - 635105</p>
-            <p class="mt-4 text-xs opacity-75">© 2025 M A B HARDWARE CEMENT. All rights reserved.</p>
+        <div class="trust-text">
+          <strong>Builders &amp; contractors trust us</strong>
+          Bulk orders · Competitive pricing · Site delivery
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <!-- Floating WhatsApp chat button -->
-    <a aria-label="Chat on WhatsApp" class="whatsapp-float" href="https://wa.me/918072274917?text=Hello%20MAB%20Hardware%20Cement%2C%20I%20need%20a%20quote" target="_blank" rel="noopener noreferrer">
-        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="36" height="36" aria-hidden="true" focusable="false">
-            <path fill="#ffffff" d="M380.9 97.1C339 55.2 281.1 32 221.2 32 99.1 32 3.8 128.3 3.8 250.3c0 44.1 11.5 87.3 33.4 125.1L0 480l109.9-36.2c36.2 20 76.9 30.8 118.2 30.8h.1c122.1 0 218.4-96.3 218.4-218.4 0-59.9-23.2-117.8-65.6-159.9zM221.2 402.7c-35.4 0-70-9.5-100.2-27.4l-7.2-4.2-65.2 21.5 21.9-63.6-4.7-7.6c-18.9-29.8-28.9-64.4-28.9-99.4 0-100.7 82.6-183.3 183.3-183.3 48.9 0 95 19 129.7 53.5 34.7 34.6 53.7 80.5 53.7 129.4 0 100.7-82.6 183.3-183.3 183.3zM321.3 291.6c-5.4-2.7-31.9-15.7-36.8-17.5-4.9-1.8-8.5-2.7-12.1 2.7-3.6 5.4-14 17.5-17.2 21.1-3.2 3.6-6.4 4-11.8 1.3-31.9-15.9-52.8-28.4-74-63-5.6-9.7 5.6-9 16.1-29.8 1.8-3.6.9-6.8-.5-9.5-1.5-2.7-12.1-29.3-16.6-40.1-4.4-10.6-8.9-9.1-12.1-9.3-3.1-.2-6.8-.2-10.4-.2-3.6 0-9.5 1.3-14.5 6.8-5.1 5.4-19.4 19-19.4 46.3 0 27.2 19.9 53.6 22.7 57.3 2.7 3.6 39.3 60.2 95.3 84 13.3 5.7 23.6 9.1 31.7 11.7 13.3 4.3 25.4 3.7 35 2.2 10.7-1.6 31.9-13 36.4-25.6 4.5-12.6 4.5-23.4 3.2-25.6-1.3-2.1-4.9-3.4-10.3-6z"/>
-        </svg>
-    </a>
+    <div class="hero-right">
+      <div class="stats-row">
+        <div class="stat-box"><span class="stat-num">3+</span><span class="stat-lbl">Top Brands</span></div>
+        <div class="stat-box"><span class="stat-num">Bulk</span><span class="stat-lbl">Orders OK</span></div>
+        <div class="stat-box"><span class="stat-num">6</span><span class="stat-lbl">Days/Week</span></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <div class="card-icon gold-bg">🏗️</div>
+          <span class="card-badge badge-gold">Available Now</span>
+        </div>
+        <h4>Cement · Steel · Aggregates</h4>
+        <p>Everything your project needs — under one roof. PPC, OPC, TMT rods, Kadapa stones and more.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <div class="card-icon green-bg">✅</div>
+          <span class="card-badge badge-green">Authorized Dealer</span>
+        </div>
+        <h4>Bharathi · Priya · UltraTech</h4>
+        <p>Genuine products from authorized manufacturer channels. No compromise on quality.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- JavaScript for form handling (to prevent alert) -->
-    <script>
-        function handleFormSubmit(event) {
-            event.preventDefault(); // Stop the form from actually submitting
-            
-            const formMessage = document.getElementById('form-message');
-            formMessage.textContent = 'Quote request sent! We will call you immediately with pricing and delivery options.';
-            formMessage.classList.remove('hidden');
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="prod-header">
+    <div>
+      <div class="sec-label">What We Supply</div>
+      <h2 class="sec-title">Our Material Range</h2>
+      <p class="sec-sub">Essential materials for every stage of construction — stocked, quality-checked, and ready.</p>
+    </div>
+    <a href="#contact" class="btn-gold">Get a Quote →</a>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-card">
+      <div class="prod-icon">🏗️</div>
+      <h3>Cement &amp; Binders</h3>
+      <p>Authorized dealer for multiple premium brands. PPC, OPC and specialty cement for every project scale — from home builds to large contractors.</p>
+      <div class="tags">
+        <span class="tag">PPC Cement</span>
+        <span class="tag">OPC Cement</span>
+        <span class="tag">Specialty RMC</span>
+        <span class="tag">Bulk Bags</span>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🔩</div>
+      <h3>Steel &amp; Reinforcement</h3>
+      <p>TMT iron rods and structural steel bars in all grades and sizes — engineered for maximum strength, corrosion resistance and durability.</p>
+      <div class="tags">
+        <span class="tag">TMT Iron Rods</span>
+        <span class="tag">Structural Steel</span>
+        <span class="tag">Binding Wire</span>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🧱</div>
+      <h3>Stone &amp; Aggregates</h3>
+      <p>High-quality Kadapa stones and aggregates from reliable quarries. Perfect for flooring, cladding, and foundation base work.</p>
+      <div class="tags">
+        <span class="tag">Kadapa Stones</span>
+        <span class="tag">Sand &amp; Gravel</span>
+        <span class="tag">Crushed Aggregate</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-            const form = event.target;
-            form.reset(); // Clear the form fields after "submission"
+<!-- BRANDS -->
+<section class="brands" id="brands">
+  <div class="brands-head">
+    <div class="sec-label">Our Partners</div>
+    <h2 class="sec-title">Authorised Cement Brands</h2>
+    <p class="sec-sub" style="margin:0 auto 0.5rem;">Official authorized dealer for India's leading cement manufacturers — 100% genuine products guaranteed.</p>
+  </div>
 
-            // Hide the message after 7 seconds
-            setTimeout(() => {
-                formMessage.classList.add('hidden');
-            }, 7000);
-        }
+  <div class="brands-grid">
+    <div class="brand-card">
+      <div class="brand-icon">🔶</div>
+      <div class="brand-name">Bharathi</div>
+      <div class="brand-type">Premium PPC &amp; OPC</div>
+      <div class="brand-auth">✓ Authorized</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-icon">🔷</div>
+      <div class="brand-name">Priya</div>
+      <div class="brand-type">High Strength Cement</div>
+      <div class="brand-auth">✓ Authorized</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-icon">⭐</div>
+      <div class="brand-name">UltraTech</div>
+      <div class="brand-type">India's #1 Brand</div>
+      <div class="brand-auth">✓ Authorized</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-icon">➕</div>
+      <div class="brand-name">&amp; More</div>
+      <div class="brand-type">Multiple brands in stock</div>
+      <div class="brand-auth">✓ Available</div>
+    </div>
+  </div>
+</section>
 
-        // Add smooth scrolling to navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+<!-- WHY -->
+<section class="why">
+  <div class="why-layout">
+    <div>
+      <div class="sec-label">Why Choose MAB</div>
+      <h2 class="sec-title">Built on Trust &amp; Quality</h2>
+      <p class="sec-sub">Builders and homeowners across Krishnagiri rely on us for the best materials at the fairest prices.</p>
+      <div class="why-features">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div><h4>Authorized Dealership</h4><p>Official dealers for all major brands — every bag authentic, certified and traceable.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div><h4>Competitive Bulk Pricing</h4><p>50 bags or 5000 — our pricing scales with your order. No hidden fees, no surprises.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div><h4>Site Delivery Available</h4><p>We deliver straight to your construction site, saving you time and logistics headaches.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div><h4>Expert Consultation</h4><p>Not sure which grade you need? Our team helps you pick the right material every time.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-right">
+      <div class="why-big-card">
+        <h3>Serving Krishnagiri Builders Since Day One</h3>
+        <p>Located on Berigai Road, Athimugam — your trusted supplier for contractors, engineers, and homeowners across the district.</p>
+        <a href="https://wa.me/918072274917?text=Hello!%20I%20need%20a%20bulk%20quote." target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#B8860B"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp for Quick Quote
+        </a>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="info-card">
+          <div class="info-card-icon">🏆</div>
+          <h4>Quality Assured</h4>
+          <p>Products sourced from authorized channels only.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚡</div>
+          <h4>Fast Processing</h4>
+          <p>Bulk order confirmed same day. WhatsApp or call to start.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="location-layout">
+    <div>
+      <div class="sec-label">Visit Us</div>
+      <h2 class="sec-title">Find Our Store</h2>
+      <p class="sec-sub">Come in for in-person consultation, material inspection, and same-day purchases.</p>
 
+      <div class="contact-items">
+        <div class="c-item">
+          <div class="c-icon">📍</div>
+          <div>
+            <div class="c-label">Address</div>
+            <div class="c-val">#2/267, Berigai Road, Athimugam,<br>Krishnagiri – 635105, Tamil Nadu</div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">📞</div>
+          <div>
+            <div class="c-label">Phone</div>
+            <div class="c-val">
+              <a href="tel:8072274917">8072274917</a> &nbsp;·&nbsp;
+              <a href="tel:9443058106">9443058106</a>
+            </div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <div class="c-label">WhatsApp</div>
+            <div class="c-val"><a href="https://wa.me/918072274917" target="_blank">+91 80722 74917</a></div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">📧</div>
+          <div>
+            <div class="c-label">Email</div>
+            <div class="c-val"><a href="/cdn-cgi/l/email-protection#9af7fee9fbf6fbeffefef3f4abaaa8ada3dafdf7fbf3f6b4f9f5f7"><span class="__cf_email__" data-cfemail="78151c0b1914190d1c1c111649484a4f41381f15191114561b1715">[email&#160;protected]</span></a></div>
+          </div>
+        </div>
+      </div>
 
+      <br>
+      <div class="hours-card">
+        <div class="hours-row"><span class="hours-day">Monday – Saturday</span><span class="hours-time">7:00 AM – 7:00 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-closed">Closed</span></div>
+      </div>
+    </div>
+
+    <!-- GOOGLE MAPS EMBED -->
+    <div class="map-card">
+      <iframe
+        src="https://maps.google.com/maps?q=QX3G%2BC8+Athimugam+Tamil+Nadu&output=embed&z=17"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="MAB Hardware Cement Location">
+      </iframe>
+      <div class="map-footer">
+        <p>
+          <strong>MAB Hardware Cement</strong>
+          #2/267 Berigai Road, Athimugam, Krishnagiri – 635105
+        </p>
+        <a href="https://maps.app.goo.gl/ZHDfzFrmMnH6PEzb6" target="_blank" class="btn-gold" style="font-size:0.78rem; padding:0.7rem 1.2rem; text-decoration:none;">
+          Open in Maps →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / QUOTE FORM -->
+<section class="contact" id="contact">
+  <div class="contact-layout">
+    <div>
+      <div class="sec-label">Get In Touch</div>
+      <h2 class="sec-title">Request a Bulk Quote</h2>
+      <p class="sec-sub">Fill the form — your details will be sent instantly to us on <strong>WhatsApp</strong> and <strong>Email</strong> both. We respond fast!</p>
+      <br>
+      <div style="display:flex; flex-direction:column; gap:1rem; margin-top:0.5rem;">
+        <a href="https://wa.me/918072274917?text=Hello%20MAB%20Hardware!%20I%20need%20a%20bulk%20quote." target="_blank" class="btn-wa" style="width:fit-content;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp: 8072274917
+        </a>
+        <a href="tel:9443058106" class="btn-outline" style="width:fit-content;">📞 Call: 9443058106</a>
+        <a href="/cdn-cgi/l/email-protection#e58881968489849081818c8bd4d5d7d2dca58288848c89cb868a88" class="btn-outline" style="width:fit-content;">📧 Email Us</a>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-title">Bulk Order Inquiry</div>
+      <div class="form-sub">Submit karte hi details WhatsApp aur Email dono pe jaayengi!</div>
+      <div class="send-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#128C7E"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Form details automatically sent to WhatsApp + Email
+      </div>
+
+      <form id="quoteForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" id="f_name" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="f_phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Material Type *</label>
+          <select id="f_material">
+            <option value="">-- Select Material --</option>
+            <option value="Cement (PPC)">Cement – PPC</option>
+            <option value="Cement (OPC)">Cement – OPC</option>
+            <option value="TMT Iron Rods">TMT Iron Rods / Steel</option>
+            <option value="Kadapa Stones">Kadapa Stones</option>
+            <option value="Sand & Aggregates">Sand &amp; Aggregates</option>
+            <option value="Multiple Materials">Multiple Materials</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Quantity &amp; Details *</label>
+          <textarea rows="3" id="f_qty" placeholder="e.g. 500 bags UltraTech OPC, 100 TMT rods (10mm)..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Delivery Address (optional)</label>
+          <input type="text" id="f_addr" placeholder="Site or delivery address in Krishnagiri">
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-submit-wa" onclick="sendToWhatsApp()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Send via WhatsApp
+          </button>
+          <button type="button" class="btn-submit-email" onclick="sendToEmail()">
+            📧 Send via Email
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">
+      © 2025 <strong>M A B Hardware Cement</strong>. All rights reserved.<br>
+      <span style="font-size:0.7rem;">Proprietor: Mohammed Salauddin · #2/267, Berigai Road, Athimugam, Krishnagiri – 635105</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#contact">Quote</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Scroll
+  }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
+
+  // Nav on scroll
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.style.padding = window.scrollY > 60 ? '0.65rem 5%' : '1rem 5%';
+    nav.style.boxShadow = window.scrollY > 60 ? '0 4px 24px rgba(100,80,30,0.1)' : 'none';
+  });
+
+  // Hamburger
+  document.getElementById('hamBtn').addEventListener('click', function() {
+    const ul = document.getElementById('navLinks');
+    if (ul.style.display === 'flex') {
+      ul.style.display = 'none';
+    } else {
+      ul.style.cssText = 'display:flex; flex-direction:column; position:absolute; top:62px; left:0; right:0; background:rgba(253,250,244,0.98); padding:1.5rem 5%; gap:1.2rem; border-bottom:1px solid #E8DEC8; backdrop-filter:blur(16px); z-index:999;';
+    }
+  });
+
+  // Form helpers
+  function getFormData() {
+    const name    = document.getElementById('f_name').value.trim();
+    const phone   = document.getElementById('f_phone').value.trim();
+    const material= document.getElementById('f_material').value;
+    const qty     = document.getElementById('f_qty').value.trim();
+    const addr    = document.getElementById('f_addr').value.trim();
+    return { name, phone, material, qty, addr };
+  }
+
+  function validateForm() {
+    const d = getFormData();
+    if (!d.name || !d.phone || !d.qty) {
+      alert('Please fill in Name, Phone, and Quantity details.');
+      return false;
+    }
+    return true;
+  }
+
+  // SEND TO WHATSAPP
+  function sendToWhatsApp() {
+    if (!validateForm()) return;
+    const d = getFormData();
+
+    const msg =
+`🏗️ *New Bulk Order Enquiry — MAB Hardware*
+
+👤 *Name:* ${d.name}
+📞 *Phone:* ${d.phone}
+🧱 *Material:* ${d.material || 'Not specified'}
+📦 *Quantity/Details:* ${d.qty}
+📍 *Delivery Address:* ${d.addr || 'Not provided'}
+
+_Sent from MAB Hardware Website_`;
+
+    const encoded = encodeURIComponent(msg);
+    // Open WhatsApp with the message pre-filled
+    window.open(`https://wa.me/918072274917?text=${encoded}`, '_blank');
+
+    showSuccess('whatsapp');
+  }
+
+  // SEND TO EMAIL
+  function sendToEmail() {
+    if (!validateForm()) return;
+    const d = getFormData();
+
+    const subject = encodeURIComponent(`Bulk Order Enquiry from ${d.name} - MAB Hardware`);
+    const body = encodeURIComponent(
+`New Bulk Order Enquiry - MAB Hardware Cement Website
+
+Name: ${d.name}
+Phone: ${d.phone}
+Material Type: ${d.material || 'Not specified'}
+Quantity / Details: ${d.qty}
+Delivery Address: ${d.addr || 'Not provided'}
+
+Sent from MAB Hardware Website`
+    );
+
+    window.location.href = `mailto:mdsalauddin10279@gmail.com?subject=${subject}&body=${body}`;
+    showSuccess('email');
+  }
+
+  function showSuccess(type) {
+    const form = document.getElementById('quoteForm');
+    const successDiv = document.createElement('div');
+    successDiv.style.cssText = `
+      background: #e8fef0; border: 1px solid #b2f0cc; border-radius: 12px;
+      padding: 1.5rem; text-align: center; margin-top: 1rem;
+      font-weight: 600; color: #128C7E; font-size: 0.9rem; line-height: 1.7;
+    `;
+    successDiv.innerHTML = type === 'whatsapp'
+      ? '✅ WhatsApp opened with your details! <br><small>Send the message to confirm your enquiry.</small>'
+      : '✅ Email app opened! <br><small>Click Send in your email app to submit your enquiry.</smal
